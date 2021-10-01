@@ -1,19 +1,12 @@
 package com.stuudent.minjebot.data;
 
 import net.dv8tion.jda.api.entities.User;
-import org.bspfsystems.yamlconfiguration.file.YamlConfiguration;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AllData {
-
-    public static YamlConfiguration tempData;
-
-    static {
-        tempData = new YamlConfiguration();
-    }
 
     public List<File> getUploads(User user, long startTime, long lastTime) {
         List<File> fileList = new ArrayList<>();

@@ -3,6 +3,7 @@ package com.stuudent.minjebot;
 import com.stuudent.minjebot.listeners.CommandListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
 import org.bspfsystems.yamlconfiguration.file.YamlConfiguration;
 
 import javax.security.auth.login.LoginException;
@@ -22,6 +23,7 @@ public class Core {
         cf = getConfig();
         JDA api = JDABuilder.createDefault(cf.getString("TOKEN")).build();
         api.addEventListener(new CommandListener());
+        api.getPresence().setActivity(Activity.watching("\"" + cf.getString("PREFIX") + "\"" + " 을(를) 입력해 보세요!"));
     }
 
     public static void saveDefaultConfig() {
